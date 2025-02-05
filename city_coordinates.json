@@ -1,0 +1,97 @@
+[
+  {
+    "city": "Airdrie",
+    "latitude": 51.28597,
+    "longitude": -114.01062
+  },
+  {
+    "city": "Beaumont",
+    "latitude": 53.3525496,
+    "longitude": -113.4151434
+  },
+  {
+    "city": "Brooks",
+    "latitude": 50.571027,
+    "longitude": -111.893005
+  },
+  {
+    "city": "Calgary",
+    "latitude": 51.0460954,
+    "longitude": -114.065465
+  },
+  {
+    "city": "Camrose",
+    "latitude": 53.013131,
+    "longitude": -112.840576
+  },
+  {
+    "city": "Chestermere",
+    "latitude": 51.0449653,
+    "longitude": -113.821414
+  },
+  {
+    "city": "Cold Lake",
+    "latitude": 54.46046,
+    "longitude": -110.192871
+  },
+  {
+    "city": "Edmonton",
+    "latitude": 53.5462055,
+    "longitude": -113.491241
+  },
+  {
+    "city": "Fort Saskatchewan",
+    "latitude": 53.7128571,
+    "longitude": -113.214894
+  },
+  {
+    "city": "Grande Prairie",
+    "latitude": 55.17108,
+    "longitude": -118.7949873
+  },
+  {
+    "city": "Lacombe",
+    "latitude": 52.4727515,
+    "longitude": -113.733215
+  },
+  {
+    "city": "Leduc",
+    "latitude": 53.2607825,
+    "longitude": -113.5511681
+  },
+  {
+    "city": "Lethbridge",
+    "latitude": 49.6945782,
+    "longitude": -112.8331033
+  },
+  {
+    "city": "Lloydminster",
+    "latitude": 53.279995,
+    "longitude": -110.00885
+  },
+  {
+    "city": "Medicine Hat",
+    "latitude": 50.04303,
+    "longitude": -110.679016
+  },
+  {
+    "city": "Red Deer",
+    "latitude": 52.2690628,
+    "longitude": -113.8141464
+  },
+  {
+    "city": "Spruce Grove",
+    "latitude": 53.545204,
+    "longitude": -113.903503
+  },
+  {
+    "city": "St. Albert",
+    "latitude": 53.633239,
+    "longitude": -113.628845
+  },
+  {
+    "city": "Wetaskiwin",
+    "latitude": 52.968492,
+    "longitude": -113.36792
+  }
+]
