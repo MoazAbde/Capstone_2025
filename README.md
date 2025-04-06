@@ -80,4 +80,5 @@ This tool supports equitable power distribution in Alberta by helping:
 
 Developed by: **Moaz Abdelmonem, Kenton Nguyen, Ammar Parvez, Youssef Hikal**  
 Client: **Yize Chen, Assistant Professor, Faculty of Engineering - Electrical & Computer Engineering Dept**
+
 Capstone Project, University of Alberta (ECE 491)
