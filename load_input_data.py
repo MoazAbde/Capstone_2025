@@ -124,21 +124,4 @@ def load_weather_data(coordinates_file, api_key):
 
 
 
-def generation_data():
-    """
-    TO-DO: get generation data from every sub-station 
-    """
-    return None
-
-def pricing_data():
-    """
-    TO-DO: get pricing data from an API
-    """
-    return None
-
-def load_demand_data():
-    """
-    TO-DO: get load demand data from an API
-    """
-    return None
 
