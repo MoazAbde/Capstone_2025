@@ -78,5 +78,5 @@ This tool supports equitable power distribution in Alberta by helping:
 
 ## 📝 Credits
 
-Developed by: **Moaz Abdelmonem**  
+Developed by: **Moaz Abdelmonem, Kenton Nguyen, Ammar Parvez, Youssef Hikal**  
 Capstone Project, University of Alberta (ECE 491)
