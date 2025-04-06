@@ -45,6 +45,18 @@ file_path = "Data/hourly_load_data_by_area.xlsx"
 df = pd.read_excel(file_path, sheet_name="Sheet1")
 
 def get_load_matrix(df, user_date, user_time, area_list):
+    """
+    Extracts the load matrix for a specified datetime and a list of areas.
+
+    Args:
+        df (DataFrame): DataFrame containing hourly load data.
+        user_date (str): Date in 'YYYY-MM-DD' format.
+        user_time (str): Time in 'HH:00:00' format.
+        area_list (list): List of area names to extract data for.
+
+    Returns:
+        DataFrame: A matrix with areas as rows and the timestamp as a column.
+    """
     datetime_str = f"{user_date} {user_time}"
 
     try:
@@ -76,6 +88,7 @@ load_matrix = get_load_matrix(df, date, time, area)
 
 dg = pd.read_excel("Data/Generation Data.xlsx")
 
+# Define power plants and capacities per city
 power_plants = {
     "Lloydminster": {"solar": 0, 
                      "gas": 0, 
@@ -290,7 +303,9 @@ power_plants = {
                  "solar": load_matrix.values[42,0]*(dg["Capacity_MW"][85]), 
                  "bio": dg["Capacity_MW"][99]}   
 }
-   
+
+# Load data per city from Excel into a dictionary for PyPSA Load components
+# load_matrix must be generated first
 loads = {
     "Lloydminster": load_matrix.values[0,0],
     "Rainbow_Lake" : load_matrix.values[1,0],
@@ -335,9 +350,12 @@ loads = {
     "Calgary": load_matrix.values[40,0], 
     "Edmonton": load_matrix.values[41,0]   
 }
-    
+
+# Initialize PyPSA network 
 n = pypsa.Network()
 
+# Add buses using coordinates
+# Coordinates file is loaded from Excel
 dl = pd.read_excel("Data/Load Data With Coordinates.xlsx") 
 
 for data in dl:
@@ -347,6 +365,8 @@ for data in dl:
     
     n.add("Bus", City, y = y_coordinate.values, x = x_coordinate.values, v_nom = 120, carrier = "AC")
 
+# Add carriers with emissions and visualization settings
+# Add each type of generator per city and fuel type
 n.add(
     "Carrier",
     ["gas", "wind", "solar", "bio", "hydro"],
@@ -358,6 +378,7 @@ n.add(
 n.add("Carrier", 
       ["electricity", "AC"])
     
+# Add each type of generator per city and fuel type
 for tech, p_nom in power_plants["Lloydminster"].items():
     n.add(
         "Generator",
@@ -821,6 +842,7 @@ for tech, p_nom in power_plants["Edmonton"].items():
     )
 
 
+# Add Load components using the `loads` dictionary
 n.add(
     "Load",
     "Lloydminster electricity demand",
@@ -1156,6 +1178,9 @@ n.add(
     p_set=loads["Edmonton"],
     carrier="electricity",
  )
+
+
+# Add Line components between cities to define the grid topology
 
 n.add(
     "Line",
@@ -2097,6 +2122,7 @@ n.add(
     r=1,
 )
 
+# Run power flow optimization
 n.optimize(solver_name="highs")
 
 extent = [-130, -55, 36.5, 75]
